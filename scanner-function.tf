@@ -2,7 +2,7 @@ resource "aws_lambda_function" "antivirus-scanner" {
   function_name = "bucket-antivirus-scanner"
   timeout       = 300
   memory_size   = 1024
-  runtime       = "python2.7"
+  runtime       = "python3.9"
   handler       = "scan.lambda_handler"
   role          = aws_iam_role.antivirus-scanner-role.arn
 

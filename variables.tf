@@ -18,7 +18,7 @@ variable "updater-environment-variables" {
 variable "antivirus-lambda-code" {
   description = "Optional argument to provide precompiled zip file containing the lambda code, skipping the built in compilation process"
   type        = string
-  default     = null
+  default     = "./build/lambda.zip"
 }
 
 variable "allow-public-access" {
