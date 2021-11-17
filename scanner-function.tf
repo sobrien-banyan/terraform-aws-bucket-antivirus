@@ -28,13 +28,13 @@ resource "aws_lambda_permission" "trigger-by-s3" {
   source_arn    = "arn:aws:s3:::${var.buckets-to-scan[count.index]}"
 }
 
-resource "aws_s3_bucket_notification" "staging" {
-  count  = length(var.buckets-to-scan)
-  bucket = var.buckets-to-scan[count.index]
+# resource "aws_s3_bucket_notification" "staging" {
+#   count  = length(var.buckets-to-scan)
+#   bucket = var.buckets-to-scan[count.index]
 
-  lambda_function {
-    lambda_function_arn = aws_lambda_function.antivirus-scanner.arn
-    events              = ["s3:ObjectCreated:*"]
-  }
-}
+#   lambda_function {
+#     lambda_function_arn = aws_lambda_function.antivirus-scanner.arn
+#     events              = ["s3:ObjectCreated:*"]
+#   }
+# }
 
