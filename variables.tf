@@ -1,6 +1,7 @@
 variable "buckets-to-scan" {
   description = "List of bucket names to be scanned by the antivirus"
   type        = list(string)
+  default     = ["sh-ondemand-scanning", "tod-client-resource"]
 }
 
 variable "scanner-environment-variables" {
