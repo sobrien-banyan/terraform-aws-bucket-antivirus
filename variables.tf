@@ -1,7 +1,8 @@
 variable "buckets-to-scan" {
   description = "List of bucket names to be scanned by the antivirus"
   type        = list(string)
-  default     = ["sh-ondemand-scanning", "tod-client-resource"]
+  default     = ["sh-ondemand-scanning"]
+  # default     = ["sh-ondemand-scanning", "tod-client-resource"]
 }
 
 variable "scanner-environment-variables" {
@@ -25,7 +26,7 @@ variable "antivirus-lambda-code" {
 variable "allow-public-access" {
   description = "If true, contents of the bucket in which the antivirus definitions are saved will be public. Good for sharing the same definitions across multiple accounts."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "antivirus-update-rate" {
